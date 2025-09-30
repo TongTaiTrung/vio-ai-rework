@@ -1,0 +1,1 @@
+actions = ["Đấm thẳng", "Đấm thấp", "Đấm móc", "Đấm múc", "Đấm phạt ngang", "Đấm lao"]

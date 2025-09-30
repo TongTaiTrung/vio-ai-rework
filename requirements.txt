@@ -1,0 +1,10 @@
+opencv-python
+mediapipe
+numpy
+fastdtw
+scipy
+openpyxl
+matplotlib
+flask
+streamlit
+plotly
