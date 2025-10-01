@@ -17,6 +17,18 @@ def init():
         return
     for index, res in enumerate(ress):
         df = pd.read_excel(BytesIO(res['excel_bytes']))
+        score = res['score']
+        mark = ""
+        
+        if (float(score) > 80):
+            mark = "Có năng khiếu 🎯"
+        elif (float(score) > 50):
+            mark = "Đạt ✅"
+        else:
+            mark = "Chưa đạt ❌"
+        
+        st.markdown(f"#### Tổng điểm: {score}")
+        st.markdown(f"###### Đánh giá: {mark}")
         styled_df = df.style.set_properties(**{
             'white-space': 'pre-wrap',
             'word-wrap': 'break-word'

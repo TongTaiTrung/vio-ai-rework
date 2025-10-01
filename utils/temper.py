@@ -1,5 +1,6 @@
 import os
 import uuid
+import shutil
 
 def getVideoTempUrl(uploaded_file):
     temp_dir = "tmp"
@@ -14,4 +15,15 @@ def getVideoTempUrl(uploaded_file):
     with open(abs_path, "wb") as f:
         f.write(uploaded_file.getbuffer())
     
+    return abs_path
+
+def clear_tmp():
+    tmp_dir = "tmp"
+    if os.path.exists(tmp_dir):
+        shutil.rmtree(tmp_dir)
+    os.makedirs(tmp_dir)
+
+def getSampleVideoUrl(type):
+    dir = "sample"
+    abs_path = os.path.abspath(os.path.join(dir, type+".mp4"))
     return abs_path

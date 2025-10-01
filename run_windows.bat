@@ -1,6 +1,6 @@
 @echo off
-python -m venv venv
+python3.10 -m venv venv
 call venv\Scripts\activate
 pip install -r requirements.txt
-python -m streamlit run app.py
+python3.10 -m streamlit run app.py
 pause
