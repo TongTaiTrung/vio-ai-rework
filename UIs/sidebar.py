@@ -64,14 +64,16 @@ def init():
     studentVideos = st.sidebar.file_uploader(
         "Chọn video học sinh (.mp4, .mov, .avi)",
         type=[".mp4",".mov",".avi"],
-        accept_multiple_files=True
+        accept_multiple_files=True,
     )
 
     if studentVideos:
         st.sidebar.success(f"Đã tải lên các video học sinh: {', '.join([v.name for v in studentVideos])}")
     
-    st.sidebar.button("Bắt đầu chấm điểm", on_click=lambda:onSubmit(
-        sampleVideo, studentVideos, studentCode, None if not choosenType else choosenType[1]
-    ))
+    st.sidebar.button(
+    "Bắt đầu chấm điểm",
+    on_click=lambda: onSubmit(sampleVideo, studentVideos, studentCode, None if not choosenType else choosenType[1]),
+    disabled=(not studentVideos or (choosenType is None and sampleVideo is None))
+)
 
     
