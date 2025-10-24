@@ -38,7 +38,7 @@ def init():
         st.download_button(
             label=f"Tải bản báo cáo {index+1}",
             data=res['excel_bytes'],
-            file_name=f"result_{index+1}.xlsx",
+            file_name=f"result_{res['student_code']}.xlsx",
             mime="application/vnd.openxmlformats-officedocument.spreadsheetml.sheet"
         )
         st.markdown("---")
