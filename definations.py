@@ -1,3 +1,5 @@
+import streamlit as st
+
 actions = [
     ["Đấm thẳng", 'dam_thang', "bên trái"], #done
     ["Đấm thấp", 'dam_thap', "trực diện"], #done

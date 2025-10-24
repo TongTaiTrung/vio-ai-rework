@@ -35,16 +35,15 @@ def onSubmit(sampleVideo, studentVideos, studentCode, type):
     #for url in studentVideoUrls:
     #    os.remove(url)
     
-def init():
+def init(page):
     global studentVideos, sampleVideo, studentCode, comparisionType
     choosenType = None
     
-    st.sidebar.image('public/fpt_education.png')
-    st.sidebar.title("Video mẫu")
+    
     comparisionType = st.sidebar.selectbox("Phương thức so sánh", [
+        ["Tải lên mẫu", "selfUpload"],
         ["Chọn mẫu", "chooseType"],
-        ["Tải lên mẫu", "selfUpload"]
-    ], format_func=lambda a : a[0])
+    ], format_func=lambda a : a[0], disabled=page!='Vovinam')
     
     if comparisionType[1] == "selfUpload":
         sampleVideo = st.sidebar.file_uploader(

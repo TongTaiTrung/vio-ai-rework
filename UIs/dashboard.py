@@ -3,9 +3,9 @@ import os
 import streamlit as st
 
 videoUrls = []
-def init():
-    st.title("FSC HAG VOVINAM")
-    st.caption("Hệ thống tự chấm điểm các động tác trong môn võ Vovinam")
+def init(page):
+    st.title("FSC HAG VOVINAM" if page=='Vovinam' else "FSC Giáo Dục Thể Chất")
+    st.caption("Hệ thống tự chấm điểm các động tác trong môn võ Vovinam" if page=='Vovinam' else "Hệ thống tự chấm điểm động tác giáo dục thể chất")
     for index, url in enumerate(videoUrls):
         if (url[1] == 'sample'):
             st.markdown("#### Video mẫu")

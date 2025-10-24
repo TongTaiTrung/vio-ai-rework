@@ -113,7 +113,6 @@ def extract_angles(video_path, skip_frames=1, max_frames=300):
     return part_angles, joint_angles, frames, orientations
 
 def should_flip(sample_parts, student_parts):
-    """Detect if student video is horizontally flipped"""
     if not sample_parts["arms"].size or not student_parts["arms"].size:
         return False
 
@@ -139,7 +138,6 @@ def should_flip(sample_parts, student_parts):
     return flipped_diff < normal_diff
 
 def score_similarity(sample, student):
-    """Score similarity using FastDTW (0-100)"""
     if not sample.size or not student.size:
         return 0.0
 
