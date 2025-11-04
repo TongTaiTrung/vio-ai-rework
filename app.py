@@ -2,6 +2,7 @@ import streamlit as st
 import pandas as pd
 from utils import results_display, baser
 from UIs import *
+import definations
 
 st.set_page_config(page_title="FSC HG Vovinam", layout="wide")
 
@@ -9,11 +10,13 @@ logo_fpt_base64 = baser.image_path_to_base64("public/fpt.svg")
 logo_vovinam_base64 = baser.image_path_to_base64("public/vovinam.png") 
 
 st.sidebar.image('public/fpt_education.png')
-selected_page = st.sidebar.selectbox(
-    'Chọn trang',
-    ['Giáo dục thể chất','Vovinam'],
-    index=0,
-)
+selected_page = 'Vovinam'
+if (definations.page == 'default'):
+    selected_page = st.sidebar.selectbox(
+        'Chọn trang',
+        ['Vovinam','Giáo dục thể chất'],
+        index=0,
+    )
 st.sidebar.title("Video mẫu")
 
 from UIs import sidebar
@@ -26,19 +29,23 @@ if selected_page == 'Vovinam':
         .fpt-logo {{
             position: fixed;
             top: 50%;
-            left: 64%;
+            left: 57%;
             transform: translate(-50%, -50%);
             z-index: 0;
+            width: 10%;
+            heigth: 10%;
             opacity: 0.05;
             pointer-events: none;
         }}
         .vovinam-logo {{
             position: fixed;
             top: 50%;
-            left: 36%;
+            left: 43%;
             transform: translate(-50%, -50%);
             z-index: 0;
             opacity: 0.05;
+            width: 10%;
+            heigth: 10%;
             pointer-events: none;
         }}
         </style>
@@ -62,6 +69,8 @@ else:
             transform: translate(-50%, -50%);
             z-index: 0;
             opacity: 0.05;
+            width: 50%;
+            heigth: 50%;
             pointer-events: none;
         }}
 

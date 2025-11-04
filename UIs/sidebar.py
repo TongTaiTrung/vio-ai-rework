@@ -45,7 +45,7 @@ def init(page):
         ["Chọn mẫu", "chooseType"],
     ], format_func=lambda a : a[0], disabled=page!='Vovinam')
     
-    if comparisionType[1] == "selfUpload":
+    if comparisionType[1] == "selfUpload" or page!='Vovinam':
         sampleVideo = st.sidebar.file_uploader(
             "Chọn video mẫu (.mp4, .mov, .avi)",
             type=[".mp4",".mov",".avi"],

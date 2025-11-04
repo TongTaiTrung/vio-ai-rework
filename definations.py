@@ -1,5 +1,6 @@
 import streamlit as st
 
+page='default'
 actions = [
     ["Đấm thẳng", 'dam_thang', "bên trái"], #done
     ["Đấm thấp", 'dam_thap', "trực diện"], #done
