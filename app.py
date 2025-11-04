@@ -69,8 +69,8 @@ else:
             transform: translate(-50%, -50%);
             z-index: 0;
             opacity: 0.05;
-            width: 50%;
-            heigth: 50%;
+            width: 10%;
+            heigth: 10%;
             pointer-events: none;
         }}
 
